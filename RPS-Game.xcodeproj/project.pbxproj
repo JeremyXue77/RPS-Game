@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		5EA00DA824ED664800640945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA00DA724ED664800640945 /* AppDelegate.swift */; };
 		5EA00DAA24ED664800640945 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA00DA924ED664800640945 /* SceneDelegate.swift */; };
-		5EA00DAC24ED664800640945 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA00DAB24ED664800640945 /* ViewController.swift */; };
-		5EA00DAF24ED664800640945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA00DAD24ED664800640945 /* Main.storyboard */; };
 		5EA00DB124ED664900640945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EA00DB024ED664900640945 /* Assets.xcassets */; };
 		5EA00DB424ED664900640945 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA00DB224ED664900640945 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,8 +17,6 @@
 		5EA00DA424ED664800640945 /* RPS-Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RPS-Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA00DA724ED664800640945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EA00DA924ED664800640945 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5EA00DAB24ED664800640945 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5EA00DAE24ED664800640945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EA00DB024ED664900640945 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EA00DB324ED664900640945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EA00DB524ED664900640945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +52,29 @@
 		5EA00DA624ED664800640945 /* RPS-Game */ = {
 			isa = PBXGroup;
 			children = (
-				5EA00DA724ED664800640945 /* AppDelegate.swift */,
-				5EA00DA924ED664800640945 /* SceneDelegate.swift */,
-				5EA00DAB24ED664800640945 /* ViewController.swift */,
-				5EA00DAD24ED664800640945 /* Main.storyboard */,
+				5EA00DBC24ED669600640945 /* Applications */,
+				5EA00DBB24ED668300640945 /* SupportingFiles */,
+			);
+			path = "RPS-Game";
+			sourceTree = "<group>";
+		};
+		5EA00DBB24ED668300640945 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				5EA00DB024ED664900640945 /* Assets.xcassets */,
 				5EA00DB224ED664900640945 /* LaunchScreen.storyboard */,
 				5EA00DB524ED664900640945 /* Info.plist */,
 			);
-			path = "RPS-Game";
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		5EA00DBC24ED669600640945 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				5EA00DA724ED664800640945 /* AppDelegate.swift */,
+				5EA00DA924ED664800640945 /* SceneDelegate.swift */,
+			);
+			path = Applications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +137,6 @@
 			files = (
 				5EA00DB424ED664900640945 /* LaunchScreen.storyboard in Resources */,
 				5EA00DB124ED664900640945 /* Assets.xcassets in Resources */,
-				5EA00DAF24ED664800640945 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +147,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EA00DAC24ED664800640945 /* ViewController.swift in Sources */,
 				5EA00DA824ED664800640945 /* AppDelegate.swift in Sources */,
 				5EA00DAA24ED664800640945 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +155,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5EA00DAD24ED664800640945 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5EA00DAE24ED664800640945 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5EA00DB224ED664900640945 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,7 +286,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PAC9XA99N;
-				INFOPLIST_FILE = "RPS-Game/Info.plist";
+				INFOPLIST_FILE = "RPS-Game/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +294,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jeremyxue.RPS-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,7 +304,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PAC9XA99N;
-				INFOPLIST_FILE = "RPS-Game/Info.plist";
+				INFOPLIST_FILE = "RPS-Game/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jeremyxue.RPS-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
