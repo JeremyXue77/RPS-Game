@@ -41,16 +41,16 @@ class GameViewController: UIViewController {
     private func setupViewModel() {
         let game = RPSGame()
         gameViewModel = GameViewModel(game: game)
-        gameViewModel?.message.bind { (msg) in
+        gameViewModel?.$message.bind { (msg) in
             self.gameView?.messageLabel.text = msg
         }.store(&bindJobs)
-        gameViewModel?.computerItemEmoji.bind{ (emoji) in
+        gameViewModel?.$computerItemEmoji.bind{ (emoji) in
             self.gameView?.computerChooseItemLabel.text = emoji
         }.store(&bindJobs)
-        gameViewModel?.playerItemEmoji.bind{ (emoji) in
+        gameViewModel?.$playerItemEmoji.bind{ (emoji) in
             self.gameView?.playerChooseItemLabel.text = emoji
         }.store(&bindJobs)
-        gameViewModel?.roundTitle.bind { (title) in
+        gameViewModel?.$roundTitle.bind { (title) in
             self.gameView?.roundLabel.text = title
         }.store(&bindJobs)
     }
