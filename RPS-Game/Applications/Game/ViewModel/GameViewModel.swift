@@ -23,20 +23,20 @@ class GameViewModel {
     }
     
     // MARK: Box Properties
-    private(set) var message: Box<String> = .init("😎 Please choose an Item")
-    private(set) var playerItemEmoji: Box<String> = .init("❓")
-    private(set) var computerItemEmoji: Box<String> = .init("❓")
-    private(set) var roundTitle: Box<String> = .init("Waiting...")
+    @Boxed var message:String = "😎 Please choose an Item"
+    @Boxed var playerItemEmoji:String = "❓"
+    @Boxed var computerItemEmoji:String = "❓"
+    @Boxed var roundTitle:String = "Waiting..."
     
     // MARK: Features
     private func updateBoxProperties() {
-        playerItemEmoji.value = covertItemToEmoji(game.playerChooseItem)
-        computerItemEmoji.value = covertItemToEmoji(game.computerChooseItem)
-        message.value = convertStateToMessgae(game.checkState())
+        playerItemEmoji = covertItemToEmoji(game.playerChooseItem)
+        computerItemEmoji = covertItemToEmoji(game.computerChooseItem)
+        message = convertStateToMessgae(game.checkState())
         if game.round == 0 {
-            roundTitle.value = "Waiting..."
+            roundTitle = "Waiting..."
         } else {
-            roundTitle.value = "Round \(game.round)"
+            roundTitle = "Round \(game.round)"
         }
     }
     

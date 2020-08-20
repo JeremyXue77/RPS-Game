@@ -38,3 +38,17 @@ extension Box {
         self.valueChangedAction = nil
     }
 }
+
+@propertyWrapper
+struct Boxed<Value> {
+    
+    var projectedValue: Box<Value>
+    var wrappedValue: Value {
+        get{projectedValue.value}
+        set{projectedValue.value = newValue}
+    }
+    
+    init(wrappedValue: Value) {
+        projectedValue = Box(wrappedValue)
+    }
+}
