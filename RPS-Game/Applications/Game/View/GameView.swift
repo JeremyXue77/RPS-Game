@@ -9,7 +9,7 @@
 import UIKit
 
 protocol GameViewDelegate: AnyObject {
-    func gameView(_ gameView: GameView, didChooseItem: GameView.Item)
+    func gameView(_ gameView: GameView, didChooseItem item: GameView.Item)
 }
 
 class GameView: UIView {
@@ -39,26 +39,10 @@ class GameView: UIView {
     }
 }
 
-// MARK: Methods
-extension GameView {
-    
-    func updateComputerChoose(with item: Item) {
-        computerChooseItemLabel.text = item.emoji
-    }
-}
-
 // MARK: - Nested Type
 extension GameView {
     
     enum Item: CaseIterable {
         case paper, scissor, rock
-        
-        var emoji: String {
-            switch self {
-            case .paper:   return "✋🏻"
-            case .scissor: return "✌🏻"
-            case .rock:    return "✊🏻"
-            }
-        }
     }
 }

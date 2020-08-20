@@ -24,7 +24,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cCo-0b-BXm">
-                    <rect key="frame" x="16" y="291.5" width="382" height="313"/>
+                    <rect key="frame" x="16" y="294.5" width="382" height="307"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5Tn-1K-SaZ">
                             <rect key="frame" x="96.5" y="0.0" width="189" height="119.5"/>
@@ -43,14 +43,14 @@
                                 </label>
                             </subviews>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose one!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SB-a4-Pks">
-                            <rect key="frame" x="91" y="135.5" width="200" height="42"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose one!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="1SB-a4-Pks">
+                            <rect key="frame" x="106.5" y="135.5" width="169" height="36"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fW3-IJ-ft5">
-                            <rect key="frame" x="96.5" y="193.5" width="189" height="119.5"/>
+                            <rect key="frame" x="96.5" y="187.5" width="189" height="119.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👨🏻‍💻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEG-TM-0FG">
                                     <rect key="frame" x="0.0" y="0.0" width="108" height="119.5"/>
