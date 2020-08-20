@@ -27,18 +27,43 @@ class Box<Value> {
 }
 
 // MARK: - Methods
-extension Box {
+extension Box:Cancelable {
     
-    func bind(_ action: @escaping ValueChangedAction) {
+    func bind(_ action: @escaping ValueChangedAction) -> Cancelable {
         valueChangedAction = action
         valueChangedAction?(value)
+        return AnyCancelable(self)
     }
     
-    func cancelBinding() {
+    func cancel() {
         self.valueChangedAction = nil
     }
 }
 
+protocol Cancelable {
+    func cancel()
+    func store(_ array: inout Array<Cancelable>)
+}
+extension Cancelable {
+    func store(_ array: inout Array<Cancelable>) {
+        array.append(self)
+    }
+}
+
+class AnyCancelable:Cancelable {
+    internal init(_ target: Cancelable) {
+        self.target = target
+    }
+    
+    var target: Cancelable
+    func cancel() {
+        target.cancel()
+    }
+    
+    deinit {
+        target.cancel()
+    }
+}
 @propertyWrapper
 struct Boxed<Value> {
     
