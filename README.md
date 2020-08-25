@@ -3,7 +3,7 @@
 > 
 
 ## 專案 Demo
-// Gif placeholder
+![image](https://github.com/JeremyXue77/RPS-Game/blob/master/RPSGame-Demo.gif?raw=true)
 
 ## 架構分析：
 
