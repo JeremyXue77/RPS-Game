@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 class GameViewModel {
     
@@ -23,10 +24,10 @@ class GameViewModel {
     }
     
     // MARK: Box Properties
-    @Boxed var message:String = "😎 Please choose an Item"
-    @Boxed var playerItemEmoji:String = "❓"
-    @Boxed var computerItemEmoji:String = "❓"
-    @Boxed var roundTitle:String = "Waiting..."
+    @Published var message:String? = "😎 Please choose an Item"
+    @Published var playerItemEmoji:String? = "❓"
+    @Published var computerItemEmoji:String? = "❓"
+    @Published var roundTitle:String? = "Waiting..."
     
     // MARK: Features
     private func updateBoxProperties() {

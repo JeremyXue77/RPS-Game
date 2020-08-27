@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 class GameViewController: UIViewController {
     
@@ -16,7 +17,8 @@ class GameViewController: UIViewController {
     }
     
     private var gameViewModel: GameViewModel?
-    private var bindJobs:Array<Cancelable> = []
+    private var subscriptions: Set<AnyCancellable> = []
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,18 +43,19 @@ class GameViewController: UIViewController {
     private func setupViewModel() {
         let game = RPSGame()
         gameViewModel = GameViewModel(game: game)
-        gameViewModel?.$message.bind { (msg) in
-            self.gameView?.messageLabel.text = msg
-        }.store(&bindJobs)
-        gameViewModel?.$computerItemEmoji.bind{ (emoji) in
-            self.gameView?.computerChooseItemLabel.text = emoji
-        }.store(&bindJobs)
-        gameViewModel?.$playerItemEmoji.bind{ (emoji) in
-            self.gameView?.playerChooseItemLabel.text = emoji
-        }.store(&bindJobs)
-        gameViewModel?.$roundTitle.bind { (title) in
-            self.gameView?.roundLabel.text = title
-        }.store(&bindJobs)
+        guard let gameView = gameView else { return }
+        gameViewModel?.$message
+            .assign(to: \.messageLabel.text, on: gameView)
+            .store(in: &subscriptions)
+        gameViewModel?.$computerItemEmoji
+            .assign(to: \.computerChooseItemLabel.text, on: gameView)
+            .store(in: &subscriptions)
+        gameViewModel?.$playerItemEmoji
+            .assign(to: \.playerChooseItemLabel.text, on: gameView)
+            .store(in: &subscriptions)
+        gameViewModel?.$roundTitle
+            .assign(to: \.roundLabel.text, on: gameView)
+            .store(in: &subscriptions)
     }
     
     // MARK: Features
